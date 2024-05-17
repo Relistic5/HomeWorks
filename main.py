@@ -1,51 +1,33 @@
-firstStr = 'Это моя строка'
+# Сложная сдача
+print('Введите данные о покупке:\n')
 
-def delay():
-    from time import sleep
-    sleep(2)
+name = input('Что покупаем?: ')
+price = int(input('Стомость: '))
+weight = int(input('Вес: '))
+money = int(input('Сколько у Вас денег: '))
 
+if money < price * weight:
+  print('\nНе хватает(( Пойди еще поработай')
+  print('-------------\n\n')
+else:
+  print('\nПокупка совершена. Вот Ваш чек:\n\n-------------')
+  import datetime
+  datetime_object = datetime.datetime.now()
+  print(datetime_object)
+  print(f'{name} ----- Вес: {weight} кг ----- Стоимость: {price} руб/кг.')
+  print(f'     Итого: {price * weight} руб.')
+  print(f'Внесено: {money} руб. ----- Сдача: {money - price * weight} руб.')
+  print('-------------\n\n')
 
-while True:
-    answer = int(input('Выберите действие \n'
-                       '1 - Выведите первый символ \n'
-                       '2 - Выведите последний символ \n'
-                       '3 - Выведите подстроку с третьего по пятый символы \n'
-                       '4 - Выведите строку наоборот \n'
-                       '5 - Выведите длину строки \n'
-                       '6 - Соедините строки \n'
-                       '\n'
-                       '0 - Выйти из программы \n'))
+# ------------------------------------------------------------------------------
+# Самая простая задача на свете
 
-    if answer not in [1, 2, 3, 4, 5, 6, 0]:
-        print("\nНеа.. Попробуйте еще раз.\n ------------------- \n")
-        delay()
-        continue
+n = int(input('Введите число: '))
+print('Купи конструктор!\n' * n)
 
-    elif answer == 1:
-        print('\n  Результат: \n' + firstStr[0] + '\n ------------------- \n')
-        delay()
+# ------------------------------------------------------------------------------
+# Автоматизируем простоту!
 
-    elif answer == 2:
-        print('\n  Результат: \n' + firstStr[-1] + '\n ------------------- \n')
-        delay()
-
-    elif answer == 3:
-        print('\n  Результат: \n' + firstStr[2:5] + '\n ------------------- \n')
-        delay()
-
-    elif answer == 4:
-        print('\n  Результат: \n' + firstStr[::-1] + '\n ------------------- \n')
-        delay()
-
-    elif answer == 5:
-        print('\n  Результат:')
-        print(len(firstStr))
-        print(' ------------------- \n')
-        delay()
-
-    elif answer == 6:
-        print('\n  Результат: \n' + 'Это новая строка ' + firstStr + '\n ------------------- \n')
-        delay()
-
-    elif answer == 0:
-        break
+do_this = input('Что любите делать?\n')
+n = int(input('Сколько раз?'))
+print(f'Обожаю {do_this.lower()} !\n' * n)
